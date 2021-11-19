@@ -1,0 +1,92 @@
+package mx.com.salinas.pruebas;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Pruebas {
+
+	public static void main(String[] args) {
+		
+//		int[] operaciones = {7,1,2,3,2,4,3,2};
+//		int[] operaciones = {7,1,2};
+//		int[] operaciones = {7,1};
+//		int[] operaciones = {7,2,50,2,3,1,3,3,1,3};
+		int[] operaciones = {7,1,50,1,3,2,3,3,2,3};
+		
+		for (int i = 0; i < operaciones.length; i++) {
+			System.out.println(operaciones[i] + " var i "+i);
+
+			if(operaciones[i] == 1) {
+//				Pruebas.area(10D,5D);
+				
+				i++;
+				Double valor1 = null;
+				if(i < operaciones.length){
+					valor1 = new Double(operaciones[i]);
+				} else {
+					System.out.println("No existen mas valores para calcular el area, el programa terminara");
+					break;
+//					valor1 = new Double(0);
+				}
+				
+				i++;
+				Double valor2 = null;
+				if(i < operaciones.length){
+					valor2 = new Double(operaciones[i]);	
+				} else {
+					System.out.println("No existen mas valores para calcular el area, el programa terminara");
+					break;
+//					valor2 = new Double(0);
+				}
+
+				System.out.println(valor1+" valores "+valor2);
+				
+				if(valor1 != null && valor2 != null){
+					Pruebas.area(valor1,valor2);	
+				}
+				
+
+			} else if (operaciones[i] == 2) {
+//				Pruebas.obtenerNumero(10);
+				
+				i++;
+				Pruebas.obtenerNumero(operaciones[i]);
+				
+			} else if (operaciones[i] == 3) {
+				break;			
+			}
+		}
+	}
+	
+	public static Double area(Double base, Double altura) {
+		Double salida;
+		
+		salida = base * altura;
+		System.out.println("El Area es: "+salida);
+		
+		return salida;
+	} 
+
+	public static List<Integer> obtenerNumero (Integer numero){
+		List<Integer> lista = null;
+		
+		Integer numeroAux = numero - 1;
+		
+		if(numero >= 1 && numeroAux > 0) {
+			
+			lista = new ArrayList<Integer>();
+			for (int i = numeroAux; i > 0; i--) {
+				System.out.println(i);
+				lista.add(i);
+			}
+			
+		} else {
+			System.out.println("Numero de lista menor a 0");
+		}
+		return lista;
+	}
+	
+	public static void salida() {
+		System.out.println("Programa terminado, saludos.");
+	}
+}
